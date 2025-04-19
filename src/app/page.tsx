@@ -25,8 +25,9 @@ export default async function Home({
         <header className="bg-[#1a1a1a] border-b border-white/10">
           <div className="max-w-7xl mx-auto px-4 py-6">
             <h1 className="text-3xl font-bold text-white">
-              Once Ideal de la Semana
+              Once Ideal por jornada
             </h1>
+            <h2 className="mt-2">Premier League 2023/24</h2>
             <p className="text-white/60 mt-2">
               Los mejores jugadores según sus estadísticas
             </p>
@@ -63,7 +64,7 @@ export default async function Home({
           <div className="max-w-7xl mx-auto px-4 py-6">
             <div className="flex justify-between items-center flex-col sm:flex-row gap-4">
               <p className="text-white/60 text-sm">
-                Datos proporcionados por Transfermarkt
+                Datos obtenidos de FBref y Transfermarkt
               </p>
               <div className="flex items-center gap-6">
                 <p className="text-white/80 text-sm">
