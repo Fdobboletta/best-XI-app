@@ -29,7 +29,6 @@ export function FilterBar({ currentWeek, totalWeeks }: FilterBarProps) {
     <div className="bg-[#1a1a1a] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex flex-wrap items-center gap-6">
-          {/* Week Filter */}
           <div className="flex items-center gap-3">
             <label htmlFor="week" className="text-white text-sm font-medium">
               Semana:
@@ -49,8 +48,6 @@ export function FilterBar({ currentWeek, totalWeeks }: FilterBarProps) {
               )}
             </select>
           </div>
-
-          {/* Age Filter */}
           <div className="flex items-center gap-3">
             <label htmlFor="age" className="text-white text-sm font-medium">
               Edad:
@@ -69,7 +66,6 @@ export function FilterBar({ currentWeek, totalWeeks }: FilterBarProps) {
             </select>
           </div>
 
-          {/* Market Value Filter */}
           <div className="flex items-center gap-3">
             <label htmlFor="value" className="text-white text-sm font-medium">
               Valor de mercado:

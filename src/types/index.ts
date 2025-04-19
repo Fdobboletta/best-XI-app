@@ -8,9 +8,4 @@ export interface Player {
   marketValue: number | null;
   contractEndDate: string | null;
   dateOfBirth: string | null;
-  stats?: {
-    goals: number;
-    assists: number;
-    minutes: number;
-  };
 }
