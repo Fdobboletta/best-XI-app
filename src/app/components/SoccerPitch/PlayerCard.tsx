@@ -24,19 +24,19 @@ export const PlayerCard = ({ player }: PlayerCardProps) => (
           <div
             className={`${getScoreColor(
               player.score
-            )} text-white text-sm font-bold px-2 py-0.5 rounded mb-2`}
+            )} text-white text-xs sm:text-sm font-bold px-1.5 sm:px-2 py-0.5 rounded mb-1 sm:mb-2`}
           >
             {player.score != null ? player.score.toFixed(1) : "-"}
           </div>
 
           <div className="relative">
-            <div className="w-12 h-12 relative rounded-full overflow-hidden bg-black/40 border border-white/10">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 relative rounded-full overflow-hidden bg-black/40 border border-white/10">
               {player.image ? (
                 <Image
                   src={player.image}
                   alt={player.name || ""}
                   fill
-                  sizes="(max-width: 48px) 100vw, 48px"
+                  sizes="(max-width: 768px) 40px, 48px"
                   className="object-cover"
                 />
               ) : (
@@ -45,15 +45,15 @@ export const PlayerCard = ({ player }: PlayerCardProps) => (
                 </div>
               )}
             </div>
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white/10 flex items-center justify-center border border-white/10">
-              <span className="text-[8px] text-white/80 font-medium">
+            <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 flex items-center justify-center border border-white/10">
+              <span className="text-[7px] sm:text-[8px] text-white/80 font-medium">
                 {(player.clubName || "???").slice(0, 3).toUpperCase()}
               </span>
             </div>
           </div>
 
-          <div className="mt-2 text-center">
-            <p className="text-white text-xs font-medium whitespace-nowrap">
+          <div className="mt-1 sm:mt-2 text-center">
+            <p className="text-white text-[10px] sm:text-xs font-medium whitespace-nowrap">
               {(player.name || "").split(" ").pop() || "???"}
             </p>
           </div>
@@ -64,6 +64,7 @@ export const PlayerCard = ({ player }: PlayerCardProps) => (
           className="z-50 animate-fadeIn"
           sideOffset={5}
           collisionPadding={20}
+          side="top"
         >
           <PlayerTooltip player={player} />
           <Tooltip.Arrow className="fill-gray-900/95" />
