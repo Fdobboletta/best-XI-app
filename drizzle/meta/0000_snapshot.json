@@ -1,0 +1,731 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.goalkeeper_stats": {
+      "name": "goalkeeper_stats",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "week": {
+          "name": "week",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "team_name": {
+          "name": "team_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "home_away": {
+          "name": "home_away",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_id": {
+          "name": "player_id",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_name": {
+          "name": "player_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_country_code": {
+          "name": "player_country_code",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "goals_against": {
+          "name": "goals_against",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "shots_on_target_against": {
+          "name": "shots_on_target_against",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "saves": {
+          "name": "saves",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "save_percentage": {
+          "name": "save_percentage",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "post_shot_expected_goals": {
+          "name": "post_shot_expected_goals",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "launched_passes_completed": {
+          "name": "launched_passes_completed",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "launched_passes_attempted": {
+          "name": "launched_passes_attempted",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "launched_passes_completion_percentage": {
+          "name": "launched_passes_completion_percentage",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "passes_attempted": {
+          "name": "passes_attempted",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "throws_attempted": {
+          "name": "throws_attempted",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "passes_launched_percentage": {
+          "name": "passes_launched_percentage",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "average_pass_length": {
+          "name": "average_pass_length",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "goal_kicks_attempted": {
+          "name": "goal_kicks_attempted",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "goal_kicks_launched_percentage": {
+          "name": "goal_kicks_launched_percentage",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "average_goal_kick_length": {
+          "name": "average_goal_kick_length",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "crosses_faced": {
+          "name": "crosses_faced",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "crosses_stopped": {
+          "name": "crosses_stopped",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "crosses_stopped_percentage": {
+          "name": "crosses_stopped_percentage",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "defensive_actions_outside_box": {
+          "name": "defensive_actions_outside_box",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "average_distance_defensive_actions": {
+          "name": "average_distance_defensive_actions",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "matchweek": {
+          "name": "matchweek",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "score": {
+          "name": "score",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_id_reference": {
+          "name": "player_id_reference",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "goalkeeper_stats_player_id_reference_fkey": {
+          "name": "goalkeeper_stats_player_id_reference_fkey",
+          "tableFrom": "goalkeeper_stats",
+          "tableTo": "players",
+          "schemaTo": "public",
+          "columnsFrom": [
+            "player_id_reference"
+          ],
+          "columnsTo": [
+            "transfermarkt_player_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false
+    },
+    "public.player_images": {
+      "name": "player_images",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "transfermarkt_player_id": {
+          "name": "transfermarkt_player_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "image_url": {
+          "name": "image_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "player_images_transfermarkt_player_id_fkey": {
+          "name": "player_images_transfermarkt_player_id_fkey",
+          "tableFrom": "player_images",
+          "tableTo": "players",
+          "schemaTo": "public",
+          "columnsFrom": [
+            "transfermarkt_player_id"
+          ],
+          "columnsTo": [
+            "transfermarkt_player_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false
+    },
+    "public.players": {
+      "name": "players",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "transfermarkt_player_id": {
+          "name": "transfermarkt_player_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "position": {
+          "name": "position",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "date_of_birth": {
+          "name": "date_of_birth",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "age": {
+          "name": "age",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nationality": {
+          "name": "nationality",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "second_nationality": {
+          "name": "second_nationality",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "height": {
+          "name": "height",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "foot": {
+          "name": "foot",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "joined_on": {
+          "name": "joined_on",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "signed_from": {
+          "name": "signed_from",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contract_end": {
+          "name": "contract_end",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "market_value": {
+          "name": "market_value",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "club_name": {
+          "name": "club_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "transfermarkt_club_id": {
+          "name": "transfermarkt_club_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "players_transfermarkt_player_id_key": {
+          "columns": [
+            "transfermarkt_player_id"
+          ],
+          "nullsNotDistinct": false,
+          "name": "players_transfermarkt_player_id_key"
+        }
+      },
+      "checkConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false
+    },
+    "public.player_stats": {
+      "name": "player_stats",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "week": {
+          "name": "week",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "team_name": {
+          "name": "team_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "home_away": {
+          "name": "home_away",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_id": {
+          "name": "player_id",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_name": {
+          "name": "player_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_country_code": {
+          "name": "player_country_code",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_number": {
+          "name": "player_number",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "age": {
+          "name": "age",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "positions": {
+          "name": "positions",
+          "type": "text[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "minutes_played": {
+          "name": "minutes_played",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "goals": {
+          "name": "goals",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "assists": {
+          "name": "assists",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "shots": {
+          "name": "shots",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "shots_on_target": {
+          "name": "shots_on_target",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "expected_goals": {
+          "name": "expected_goals",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "expected_assists": {
+          "name": "expected_assists",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "key_passes": {
+          "name": "key_passes",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "shot_creating_actions": {
+          "name": "shot_creating_actions",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "goal_creating_actions": {
+          "name": "goal_creating_actions",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "touches_in_opp_box": {
+          "name": "touches_in_opp_box",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "passes_completed": {
+          "name": "passes_completed",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "passes_attempted": {
+          "name": "passes_attempted",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pass_completion_percentage": {
+          "name": "pass_completion_percentage",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "progressive_passes": {
+          "name": "progressive_passes",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "passes_into_final_third": {
+          "name": "passes_into_final_third",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "progressive_passes_total_distance": {
+          "name": "progressive_passes_total_distance",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "progressive_carries": {
+          "name": "progressive_carries",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "take_ons_attempted": {
+          "name": "take_ons_attempted",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "take_ons_successful": {
+          "name": "take_ons_successful",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "touches_in_final_third": {
+          "name": "touches_in_final_third",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tackles": {
+          "name": "tackles",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "interceptions": {
+          "name": "interceptions",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "blocks": {
+          "name": "blocks",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "clearances": {
+          "name": "clearances",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tackles_plus_interceptions": {
+          "name": "tackles_plus_interceptions",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "aerials_won": {
+          "name": "aerials_won",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ball_recoveries": {
+          "name": "ball_recoveries",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "crosses": {
+          "name": "crosses",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "yellow_cards": {
+          "name": "yellow_cards",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "red_cards": {
+          "name": "red_cards",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "touches": {
+          "name": "touches",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tackles_dribbled_past": {
+          "name": "tackles_dribbled_past",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tackles_dribbled_past_attempted": {
+          "name": "tackles_dribbled_past_attempted",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tackle_dribbled_past_percentage": {
+          "name": "tackle_dribbled_past_percentage",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "main_position": {
+          "name": "main_position",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "score": {
+          "name": "score",
+          "type": "double precision",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "player_id_reference": {
+          "name": "player_id_reference",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "player_stats_player_id_reference_fkey": {
+          "name": "player_stats_player_id_reference_fkey",
+          "tableFrom": "player_stats",
+          "tableTo": "players",
+          "schemaTo": "public",
+          "columnsFrom": [
+            "player_id_reference"
+          ],
+          "columnsTo": [
+            "transfermarkt_player_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {
+      "player_stats": {
+        "columns": {
+          "positions": {
+            "isArray": true,
+            "dimensions": 1,
+            "rawType": "text"
+          }
+        }
+      }
+    }
+  }
+}
