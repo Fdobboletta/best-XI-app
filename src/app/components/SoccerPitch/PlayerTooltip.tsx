@@ -1,11 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import { Player } from "@/types";
 
 interface PlayerTooltipProps {
   player: Player;
-  onClose?: () => void;
 }
 
 const formatDate = (date: string | null) => {
@@ -44,30 +41,8 @@ const getPositionName = (position: string | null): string => {
   return positions[position] || position;
 };
 
-export const PlayerTooltip = ({ player, onClose }: PlayerTooltipProps) => (
-  <div className="bg-gray-900/95 p-4 rounded-lg shadow-xl max-w-xs w-full relative">
-    {/* Close button - only visible on mobile */}
-    <button
-      onClick={onClose}
-      className="absolute top-2 right-2 text-white/60 hover:text-white p-2 min-[745px]:hidden"
-      aria-label="Cerrar"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <line x1="18" y1="6" x2="6" y2="18" />
-        <line x1="6" y1="6" x2="18" y2="18" />
-      </svg>
-    </button>
-
+export const PlayerTooltip = ({ player }: PlayerTooltipProps) => (
+  <div className="bg-gray-900/95 p-4 rounded-lg shadow-xl max-w-xs">
     <div className="space-y-3">
       <div className="flex items-center space-x-3 border-b border-white/10 pb-2">
         <div className="w-12 h-12 relative rounded-full overflow-hidden">
