@@ -8,11 +8,11 @@ import { fetchPlayers } from "./lib/fetchPlayers/fetchPlayers";
 export default async function Home({
   searchParams,
 }: {
-  searchParams: { week?: string; age?: string; value?: string };
+  searchParams: Promise<{ week?: string; age?: string; value?: string }>;
 }) {
   try {
     const awaitedSearchParams = await searchParams;
-    const currentWeek = parseInt(searchParams.week || "1");
+    const currentWeek = parseInt(awaitedSearchParams.week || "1");
     const playersWithImagesAndStats = await fetchPlayers(awaitedSearchParams);
     const keepersWithImagesAndStats = await fetchKeeper(awaitedSearchParams);
 
