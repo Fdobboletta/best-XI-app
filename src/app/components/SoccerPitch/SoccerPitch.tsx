@@ -54,15 +54,15 @@ export function SoccerPitch({ players }: SoccerPitchProps) {
 
   return (
     <div className="relative w-full max-w-6xl mx-auto bg-[#1a1a1a] rounded-xl overflow-hidden">
-      <div className="relative w-full" style={{ paddingBottom: "66.67%" }}>
+      <div className="relative w-full min-[745px]:pb-[66.67%] pb-[133.33%]">
+        {/* Desktop Field */}
         <svg
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full hidden min-[745px]:block"
           viewBox="0 0 100 66.67"
           preserveAspectRatio="xMidYMid slice"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Field Outline */}
           <rect
             x="2"
             y="2"
@@ -71,8 +71,6 @@ export function SoccerPitch({ players }: SoccerPitchProps) {
             stroke="rgba(255,255,255,0.15)"
             strokeWidth="0.2"
           />
-
-          {/* Center Line */}
           <line
             x1="50"
             y1="2"
@@ -81,8 +79,6 @@ export function SoccerPitch({ players }: SoccerPitchProps) {
             stroke="rgba(255,255,255,0.15)"
             strokeWidth="0.2"
           />
-
-          {/* Center Circle */}
           <circle
             cx="50"
             cy="33.335"
@@ -91,8 +87,6 @@ export function SoccerPitch({ players }: SoccerPitchProps) {
             strokeWidth="0.2"
           />
           <circle cx="50" cy="33.335" r="0.5" fill="rgba(255,255,255,0.15)" />
-
-          {/* Penalty Areas */}
           <rect
             x="2"
             y="16.67"
@@ -109,8 +103,6 @@ export function SoccerPitch({ players }: SoccerPitchProps) {
             stroke="rgba(255,255,255,0.15)"
             strokeWidth="0.2"
           />
-
-          {/* Goal Areas */}
           <rect
             x="2"
             y="25"
@@ -129,8 +121,74 @@ export function SoccerPitch({ players }: SoccerPitchProps) {
           />
         </svg>
 
+        {/* Mobile Field */}
+        <svg
+          className="absolute inset-0 w-full h-full min-[745px]:hidden"
+          viewBox="0 0 100 133.33"
+          preserveAspectRatio="xMidYMid slice"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="2"
+            y="2"
+            width="96"
+            height="129.33"
+            stroke="rgba(255,255,255,0.15)"
+            strokeWidth="0.2"
+          />
+          <line
+            x1="50"
+            y1="2"
+            x2="50"
+            y2="131.33"
+            stroke="rgba(255,255,255,0.15)"
+            strokeWidth="0.2"
+          />
+          <circle
+            cx="50"
+            cy="66.665"
+            r="10"
+            stroke="rgba(255,255,255,0.15)"
+            strokeWidth="0.2"
+          />
+          <circle cx="50" cy="66.665" r="0.5" fill="rgba(255,255,255,0.15)" />
+          <rect
+            x="2"
+            y="41.665"
+            width="20"
+            height="50"
+            stroke="rgba(255,255,255,0.15)"
+            strokeWidth="0.2"
+          />
+          <rect
+            x="78"
+            y="41.665"
+            width="20"
+            height="50"
+            stroke="rgba(255,255,255,0.15)"
+            strokeWidth="0.2"
+          />
+          <rect
+            x="2"
+            y="54.165"
+            width="10"
+            height="25"
+            stroke="rgba(255,255,255,0.15)"
+            strokeWidth="0.2"
+          />
+          <rect
+            x="88"
+            y="54.165"
+            width="10"
+            height="25"
+            stroke="rgba(255,255,255,0.15)"
+            strokeWidth="0.2"
+          />
+        </svg>
+
         {/* Players Grid */}
-        <div className="absolute inset-0 grid grid-cols-7 grid-rows-7 p-8 h-full">
+        <div className="absolute inset-0 grid grid-cols-7 grid-rows-7 gap-1 min-[745px]:gap-0 p-3 min-[745px]:p-8 h-full">
           {Object.entries(POSITIONS).map(([position, style]) => {
             const positionKey = getPositionKey(position);
             const player = playersByPosition.get(positionKey);
@@ -140,7 +198,7 @@ export function SoccerPitch({ players }: SoccerPitchProps) {
             return (
               <div
                 key={position}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center transform scale-[0.85] min-[745px]:scale-100"
                 style={{
                   gridArea: style.gridArea,
                   alignSelf: "center",
