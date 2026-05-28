@@ -100,7 +100,7 @@ export default async function Home({
         </header>
 
         {/* Filters + Pitch + Panel */}
-        <Suspense>
+        <Suspense fallback={null}>
           <BestXIClient players={bestXI} currentWeek={currentWeek} />
         </Suspense>
 
@@ -178,6 +178,7 @@ export default async function Home({
                 href="https://www.linkedin.com/in/facundo-dobboletta/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 style={{ color: "var(--text-dim)" }}
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -188,6 +189,7 @@ export default async function Home({
                 href="https://www.instagram.com/facudobbo/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 style={{ color: "var(--text-dim)" }}
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
