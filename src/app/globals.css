@@ -26,11 +26,26 @@
   --color-bg:         var(--bg);
   --color-bg-2:       var(--bg-2);
   --color-surface:    var(--surface);
+  --color-surface-2:  var(--surface-2);
+  --color-hover:      var(--hover);
   --color-border:     var(--border);
+  --color-border-2:   var(--border-2);
   --color-text:       var(--text);
   --color-text-dim:   var(--text-dim);
   --color-text-faint: var(--text-faint);
   --color-accent:     var(--accent);
+
+  --font-display: var(--font-display);
+  --font-body:    var(--font-body);
+  --font-num:     var(--font-num);
+
+  --radius-s:  var(--radius-s);
+  --radius-m:  var(--radius-m);
+  --radius-l:  var(--radius-l);
+  --radius-xl: var(--radius-xl);
+
+  --shadow-1: var(--shadow-1);
+  --shadow-2: var(--shadow-2);
 }
 
 body {
