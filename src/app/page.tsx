@@ -22,7 +22,7 @@ export default async function Home({
     return (
       <div className="min-h-screen" style={{ background: "var(--bg)" }}>
         {/* Header */}
-        <header className="px-6 md:px-10 pt-8 pb-5">
+        <header className="px-6 md:px-10 pt-8 pb-5 max-w-[1280px] mx-auto">
           <div
             style={{
               color: "var(--text-dim)",

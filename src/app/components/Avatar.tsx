@@ -16,12 +16,12 @@ export function Avatar({
   size = 52,
   focused = false,
 }: AvatarProps) {
-  const initials = name
+  const initials = (name ?? "")
     .split(" ")
     .map((w) => w[0])
     .slice(0, 2)
     .join("")
-    .toUpperCase();
+    .toUpperCase() || "?";
 
   const ringInset = focused ? -4 : -3;
   const ringOpacity = focused ? 1 : 0.6;

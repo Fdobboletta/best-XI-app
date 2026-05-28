@@ -17,11 +17,11 @@ export function BestXIClient({ players, currentWeek }: BestXIClientProps) {
   const focusedPlayer = players.find((p) => p.name === focused) ?? null;
 
   return (
-    <>
+    <div className="w-full max-w-[1280px] mx-auto px-6 md:px-10">
       <FilterBar currentWeek={currentWeek} totalWeeks={TOTAL_WEEKS} />
 
       {/* Stage */}
-      <div className="px-6 md:px-10 py-4">
+      <div className="py-4">
         {/* Desktop: 2 cols. Tablet/mobile: 1 col */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-0">
           {/* Pitch */}
@@ -81,6 +81,6 @@ export function BestXIClient({ players, currentWeek }: BestXIClientProps) {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

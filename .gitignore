@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# design artifacts & internal tooling
+design_handoff_best_xi/
+Best XI.zip
+.superpowers/
+.claude/
+docs/superpowers/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
