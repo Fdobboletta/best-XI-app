@@ -206,19 +206,20 @@ function PlayerDetail({
         <StatCell label="Nacimiento" value={fmtDate(player.dateOfBirth)} />
       </div>
 
-      {/* CTA */}
+      {/* CTA — placeholder, comparison feature not yet implemented */}
       <div className="p-4">
         <button
+          disabled
           style={{
             width: "100%",
             background: "transparent",
-            color: "var(--text)",
-            border: "1px solid var(--border-2)",
+            color: "var(--text-faint)",
+            border: "1px solid var(--border)",
             borderRadius: "var(--radius-m)",
             padding: "10px",
             fontSize: 12,
             fontWeight: 600,
-            cursor: "pointer",
+            cursor: "not-allowed",
             fontFamily: "var(--font-body)",
           }}
         >

@@ -44,12 +44,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
-      </head>
       <body
         className={`${bricolage.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
         style={{ fontFamily: "var(--font-body)" }}
